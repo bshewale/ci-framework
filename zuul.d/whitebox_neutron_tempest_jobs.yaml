@@ -5,7 +5,7 @@
 - job:
     name: whitebox-neutron-tempest-plugin-podified-multinode-edpm-deployment-crc-2comp
     parent: podified-multinode-edpm-deployment-crc-2comp
-    nodeset: centos-9-2x-centos-9-xxl-crc-cloud-ocp-4-18-1-xxl
+    nodeset: centos-9-2x-centos-9-xxl-crc-cloud-ocp-4-20-1-xxl
     timeout: 14400
     override-checkout: main
     description: |
@@ -189,3 +189,5 @@
               ^whitebox_neutron_tempest_plugin.tests.scenario.test_vlan_transparency.MultiPortVlanTransparencyTest
               ^whitebox_neutron_tempest_plugin.tests.scenario.test_vlan_transparency.MultiVlanTransparencyTest
               ^whitebox_neutron_tempest_plugin.tests.scenario.test_vrrp.VrrpTest
+              # remove when bug OSPCIX-1340 resolved
+              ^whitebox_neutron_tempest_plugin.tests.scenario.test_ovn_dbs.OvnDbsMonitoringTest
